@@ -1,6 +1,6 @@
-# README
+# Reddit Clone README
 
-This is a Reddit clone where I walk through this video tutorial:
+This is a Reddit clone where I walk through this video tutorial: [How to build a Reddit or Hacker News Style Web App in Rails 4](https://www.youtube.com/watch?v=7-1HCWbu7iU)
 
 
 
