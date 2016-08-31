@@ -182,5 +182,14 @@ resources :links do
 end
 ```
 Notice how :comments is nested in the links block.  Do 'rails routes' to see how this affects the comments.
+To get the code to work, I had to add a gem called [RecordTagHelper](https://github.com/rails/record_tag_helper).
+The div_for(comments) line in the comment partial (_comment.html.erb) was not working because div_for
+is not a part of Rails 5 and this tutorial app was originally created using Rails 4.  It works now.
 
+####~1:02:30 - Add Names (for users)
+```shell
+git checkout -b add_names
+rails g migration add_name_to_users name:string
+rails db:migrate
+```
 
