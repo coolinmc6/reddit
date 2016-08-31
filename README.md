@@ -68,10 +68,6 @@ destroy those first two links.
 ####~31:10
 Remove "add link" link
 
-
-<<<<<<< HEAD
-####~
-=======
 ####~32:50 - Add Bootstrap
 As a quick re-hash of how to add a gem, you need to:
 1. Go to [rubygems.org](https://rubygems.org/) and search for the gem you want. 
@@ -97,19 +93,9 @@ bundle install
 application.html.erb
 show.html.erb
 index.html.erb
->>>>>>> add_bootstrap
-
 
 ####~40:00 - Styled _form.html.erb
 Q - How do I edit the "url" and "title"?  Can I make them all caps?
-
-<<<<<<< HEAD
-####~
-
-
-####~
-=======
->>>>>>> add_bootstrap
 
 ####~40:30 - Style: Panel
 Cool looking panel form to remember in bootstrap
