@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Reddit clone where I walk through this video tutorial:
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+~20:00 => add 'has_many :links' to user.rb (User model) and 'belongs_to :user' in link.rb (Link model).  This creates 
+the relationship between them.  When I go into the console, I can see that the relationshp is set-up by doing 
+Link.first.user.  
 
-* Database creation
+~21:45 => rails generate migration add_user_id_to_links user_id:integer
+This add the user_id column to the links table.  After creating the migration, run "rails db:migrate".
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
