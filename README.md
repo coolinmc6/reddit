@@ -140,5 +140,47 @@ end
 
 Add upvote and downvote actions to the links_controller.rb:
 ```ruby
+def upvote
+  @link = Link.find(params[:id])
+  @link.upvote_by current_user
+  redirect_to :back
+end
 
+def downvote
+  @link = Link.find(params[:id])
+  @link.downvote_from current_user
+  redirect_to :back
+end
 ```
+
+####~53:40 - Add Comments
+```shell
+rails generate scaffold Comment link_id:integer:index body:text user:references --skip-stylesheets
+rails db:migrate
+```
+I also want to add the [simple_form gem](https://rubygems.org/gems/simple_form).
+Add the association between links and comments:
+```ruby
+has_many :comments # link.rb
+belongs_to :link # comment.rb
+```
+Look at the comment model (comment.rb)...it "belongs_to" two other models:
+```ruby
+class Comment < ApplicationRecord
+  belongs_to :user
+  belongs_to :link
+end
+```
+Update the routes.rb file, in particular the links resources:
+```ruby
+resources :links do
+	member do
+		put "like", to: "links#upvote"
+		put "dislike", to: "links#downvote"
+	end
+  resources :comments # NEW LINE
+end
+```
+Notice how :comments is nested in the links block.  Do 'rails routes' to see how this affects the comments.
+
+
