@@ -5,12 +5,12 @@ This is a Reddit clone where I walk through this video tutorial: [How to build a
 
 
 
-~20:00 => add 
+~20:00 =>
 ```ruby
-has_many :links
+has_many :links # in the user.rb file
+belongs_to :user # in the link.rb file
 ``` 
-to user.rb (User model) and 'belongs_to :user' in link.rb (Link model).  This creates 
-the relationship between them.  When I go into the console, I can see that the relationshp is set-up by doing 
+This creates the relationship between them.  When I go into the console, I can see that the relationshp is set-up by doing 
 Link.first.user.  
 
 ~21:45 => rails generate migration add_user_id_to_links user_id:integer
