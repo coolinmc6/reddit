@@ -6,9 +6,26 @@ This is a Reddit clone where I walk through this video tutorial: [How to build a
 
 ```
 
+###~4:00
+Use scaffold to create link controller and model (and a ton of other files)
 
+###~7:30
+Begin creation of users by creating branch 'add_users'
+###~9:00
+Add Devise gem:
+```ruby
+gem 'devise', '~> 4.2' # added to Gemfile
+```
+```shell
+rails generate devise:install
+```
+###~12:30
+Actually create the user model using:
+```shell
+rails g devise User
+```
 
-~20:00 =>
+###~20:00
 ```ruby
 has_many :links # in the user.rb file
 belongs_to :user # in the link.rb file
@@ -34,3 +51,28 @@ link = Link.last
 link.user
 link.user.email
 ```
+###~26:40 - Authentication
+This prevents visitors to the site that are NOT users from deleting links.  If you DO try to destroy a link, when you
+click destroy, it redirects you to the login page.
+Q - How does this work?  What is this line showing me?
+
+```ruby
+before_filter :authenticate_user!, :except =>[:index, :show] # links_controller.rb
+```
+
+###~27:50
+In the *index.html.erb* file, wrap the 'edit' and 'destroy' links in an if/then statement to prevent users editing or 
+destroying the links of others.  I made two test links before building Users so any non-user will be able to edit or 
+destroy those first two links.
+
+###~31:10
+Remove "add link" link
+
+###~
+
+
+###~
+
+
+###~
+
