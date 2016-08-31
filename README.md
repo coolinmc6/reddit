@@ -69,12 +69,47 @@ destroy those first two links.
 Remove "add link" link
 
 
+<<<<<<< HEAD
+####~
+=======
+####~32:50 - Add Bootstrap
+As a quick re-hash of how to add a gem, you need to:
+1. Go to [rubygems.org](https://rubygems.org/) and search for the gem you want. 
+2. Take a look at the documentation which will tell you how to install and use it.  These are the steps per
+Bootstrap's [documentation](https://github.com/twbs/bootstrap-sass).
+3. Add statement to the Gemile:
+```ruby
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7' # Gemfile
+```
+3. run bundle install
+```shell
+bundle install
+```
+4.Import Bootstrap styles in app/assets/stylesheets/application.scss
+```ruby
+# "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+```
+5. And so on...
+
+####~35/36 - Styling
+application.html.erb
+show.html.erb
+index.html.erb
+>>>>>>> add_bootstrap
+
+
+####~40:00 - Styled _form.html.erb
+Q - How do I edit the "url" and "title"?  Can I make them all caps?
+
+<<<<<<< HEAD
 ####~
 
 
-
 ####~
+=======
+>>>>>>> add_bootstrap
 
-
-####~
-
+####~40:30 - Style: Panel
+Cool looking panel form to remember in bootstrap
