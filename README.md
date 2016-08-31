@@ -117,7 +117,7 @@ acts_as_votable # link.rb
 ```
 Again, that step is in the docs...
 You can verify that it's working by using rails console:
-'''shell
+```shell
 @link = Link.first
 @user = User.first
 @link.liked_by @user
@@ -182,6 +182,7 @@ resources :links do
 end
 ```
 Notice how :comments is nested in the links block.  Do 'rails routes' to see how this affects the comments.
+
 To get the code to work, I had to add a gem called [RecordTagHelper](https://github.com/rails/record_tag_helper).
 The div_for(comments) line in the comment partial (_comment.html.erb) was not working because div_for
 is not a part of Rails 5 and this tutorial app was originally created using Rails 4.  It works now.
