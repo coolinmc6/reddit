@@ -91,7 +91,9 @@ bundle install
 
 ####~35/36 - Styling
 application.html.erb
+
 show.html.erb
+
 index.html.erb
 
 ####~40:00 - Styled _form.html.erb
@@ -116,6 +118,7 @@ As a reminder, you would learn how to generate the migration from the gem's docs
 acts_as_votable # link.rb 
 ```
 Again, that step is in the docs...
+
 You can verify that it's working by using rails console:
 ```shell
 @link = Link.first
