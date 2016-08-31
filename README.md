@@ -5,7 +5,9 @@ This is a Reddit clone where I walk through this video tutorial: [How to build a
 
 
 
-~20:00 => add 'has_many :links' to user.rb (User model) and 'belongs_to :user' in link.rb (Link model).  This creates 
+~20:00 => add '''ruby
+has_many :links
+''' to user.rb (User model) and 'belongs_to :user' in link.rb (Link model).  This creates 
 the relationship between them.  When I go into the console, I can see that the relationshp is set-up by doing 
 Link.first.user.  
 
