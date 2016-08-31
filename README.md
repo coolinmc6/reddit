@@ -100,4 +100,45 @@ Q - How do I edit the "url" and "title"?  Can I make them all caps?
 ####~40:30 - Style: Panel
 Cool looking panel form to remember in bootstrap
 
+####~43:40 - Add voting
+```shell
+git checkout -b add_voting
+```
+```ruby
+gem 'acts_as_votable', '~> 0.10.0' # Gemfile
+```
+```shell
+rails generate acts_as_votable:migration
+rails db:migrate
+```
+As a reminder, you would learn how to generate the migration from the gem's docs: [https://github.com/ryanto/acts_as_votable](https://github.com/ryanto/acts_as_votable).
+```ruby
+acts_as_votable # link.rb 
+```
+Again, that step is in the docs...
+You can verify that it's working by using rails console:
+'''shell
+@link = Link.first
+@user = User.first
+@link.liked_by @user
+@link.votes_for.size  # should be 1 as we liked the link by the first user
+@link.save # saves it to database
+```
+I then need to update the config/routes.rb file:
+```ruby
+# Old
+resources :links
 
+# New
+resources :links do
+	member do
+		put "like", to: "links#upvote"
+		put "dislike", to: "links#downvote"
+	end
+end
+```
+
+Add upvote and downvote actions to the links_controller.rb:
+```ruby
+
+```
